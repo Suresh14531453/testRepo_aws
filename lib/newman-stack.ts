@@ -68,17 +68,28 @@ export class NewmanStack extends cdk.Stack {
     //     ],
     //   },
     // )
+    // pipeline.addStage({
+    //   stageName: "Pipeline_Update",
+    //   actions: [
+    //     new CloudFormationCreateUpdateStackAction({
+    //       actionName: "Pipeline_Update",
+    //       stackName: "NewmanStack",
+    //       templatePath: cdkBuildOutput.atPath("NewmanStack.template.json"),
+    //       adminPermissions: true,
+    //     }),
+    //   ],
+    // });
     pipeline.addStage({
-      stageName: "Pipeline_Update",
-      actions: [
+      stageName:"PipelineUpdate",
+      actions:[
         new CloudFormationCreateUpdateStackAction({
-          actionName: "Pipeline_Update",
-          stackName: "NewmanStack",
-          templatePath: cdkBuildOutput.atPath("NewmanStack.template.json"),
-          adminPermissions: true,
-        }),
-      ],
-    });
+          actionName:"PipelineUpdate",
+          stackName:"NewmanStack",
+          templatePath:cdkBuildOutput.atPath("NewmanStack.template.json"),
+          adminPermissions:true
+        })
+      ]
+    })
     
   }
 
