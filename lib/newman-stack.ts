@@ -68,6 +68,7 @@ export class NewmanStack extends cdk.Stack {
         ],
       },
     )
+    
   }
 
 
