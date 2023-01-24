@@ -10,6 +10,7 @@ const app = new cdk.App();
  const stack = new Newman.NewmanStack(app, 'MyTestStack');
 //     // THEN
 //   const template = Template.fromStack(stack);
+expect(Template.fromStack(stack).toJSON()).toMatchSnapshot();
 
 //   template.hasResourceProperties('AWS::SQS::Queue', {
 //     VisibilityTimeout: 300
