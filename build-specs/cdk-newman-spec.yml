@@ -12,7 +12,14 @@ phases:
       # - npm run test 
       # - npm run cdk -- synth
 
-artifacts:
+  artifacts:
   base-directory: cdk.out
   files:
-    - '*/'
+    - '**/*'
+
+reports:
+  jest_reports:
+    files:
+      - 'test-report.xml'
+    file-format: JUNITXML
+    base-directory: 'test-reports'

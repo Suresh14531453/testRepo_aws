@@ -5,11 +5,13 @@ phases:
     commands:
       - npm install -g npm
       - npm install
+      - npm install -g newman
   build:
     commands:
       - npm run build 
       - npm run test 
       - npm run cdk -- synth
+      - newman run NewmanStack.template.json
 
 artifacts:
   base-directory: cdk.out
